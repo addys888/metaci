@@ -24,6 +24,8 @@ from .common import *  # noqa
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
 SECRET_KEY = env("DJANGO_SECRET_KEY")
+DEBUG = env.bool("DJANGO_DEBUG", default=True)
+TEMPLATES[0]["OPTIONS"]["debug"] = DEBUG
 
 
 # This ensures that Django will be able to detect a secure connection
