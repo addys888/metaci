@@ -250,7 +250,7 @@ LOGIN_URL = "account_login"
 AUTOSLUG_SLUGIFY_FUNCTION = "slugify.slugify"
 
 # django-rq
-REDIS_URL = env("REDIS_URL", default="redis://localhost:6379")
+REDIS_URL = env("REDISTOGO_URL", default="redis://localhost:6379") #Change redisToGo key from 'REDIS_URL' to 'REDISTOGO_URL'(Manual change)
 REDIS_URL += "/0"
 RQ_QUEUES = {
     "default": {
